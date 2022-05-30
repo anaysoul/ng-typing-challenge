@@ -1,9 +1,20 @@
-<div class="field">
-  <h1 class="title">Typing Challenge</h1>
-  <div class="content" is-italic>Lorem ipsum dolor sit amet</div>
-  <br />
-  <div class="control">
-    <input class="input" type="text" placeholder="Lorem ipsum dolor sit amet" />
+<div class="container">
+  <div class="columns is-centered">
+    <div class="box column is-one-third">
+      <h1 class="title has-text-centered">Typing Challenge</h1>
+      <p class="has-text-centered is-italic">{{ randomText }}</p>
+      <br />
+      <div class="field">
+        <input
+          class="input"
+          type="text"
+          [value]="inputText"
+          placeholder="Lorem ipsum dolor sit amet"
+        />
+      </div>
+      <div class="box has-text-centered">
+        <p class="help is-success" *ngIf="randomText === inputText">You Win!</p>
+      </div>
+    </div>
   </div>
-  <p class="help is-success">You Win!</p>
 </div>
