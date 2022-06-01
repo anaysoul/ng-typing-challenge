@@ -2,7 +2,12 @@
   <div class="columns is-centered">
     <div class="box column is-one-third">
       <h1 class="title has-text-centered">Typing Challenge</h1>
-      <p class="has-text-centered is-italic">{{ randomText }}</p>
+      <p
+        *ngFor="let letter of randomText.split(''); let i = index"
+        class="has-text-centered is-italic"
+      >
+        {{ randomText }}
+      </p>
       <br />
       <div class="field">
         <input
@@ -10,11 +15,13 @@
           type="text"
           #userInput
           (input)="onInput(userInput.value)"
-          placeholder="Lorem ipsum dolor sit amet"
+          placeholder="Enter the sentence"
         />
       </div>
       <div class="box has-text-centered">
-        <p class="help is-success" *ngIf="randomText">You Win!</p>
+        <p class="help is-success" *ngIf="userInput.value === randomText">
+          You Win!
+        </p>
       </div>
     </div>
   </div>

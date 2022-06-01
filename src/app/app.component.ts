@@ -7,10 +7,10 @@ import { lorem } from 'faker';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'typing-challenge';
   randomText = lorem.sentence();
+  enteredText = '';
 
   onInput(value: string) {
-    console.log(value);
+    this.enteredText = value;
   }
 }
