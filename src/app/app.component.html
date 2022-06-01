@@ -8,12 +8,13 @@
         <input
           class="input"
           type="text"
-          [value]="inputText"
+          #userInput
+          (input)="onInput(userInput.value)"
           placeholder="Lorem ipsum dolor sit amet"
         />
       </div>
       <div class="box has-text-centered">
-        <p class="help is-success" *ngIf="randomText === inputText">You Win!</p>
+        <p class="help is-success" *ngIf="randomText">You Win!</p>
       </div>
     </div>
   </div>

@@ -8,7 +8,9 @@ import { lorem } from 'faker';
 })
 export class AppComponent {
   title = 'typing-challenge';
-  inputText = '';
-
   randomText = lorem.sentence();
+
+  onInput(value: string) {
+    console.log(value);
+  }
 }
